@@ -1,0 +1,19 @@
+#!/bin/python3
+
+import string
+import sys
+
+word=list(string.ascii_lowercase) # Список алфавита
+
+name = sys.argv[1] # слово кторое надо зашифровать
+s = int(sys.argv[2]) # ключ
+
+for i in name: # Шифрование
+	a = word.index(i) 
+	if a + s > 25:
+		a = (a-26)
+		b = word[a+s]
+	else:
+		b = word[a+s]
+	print(b,end='')
+print()	
